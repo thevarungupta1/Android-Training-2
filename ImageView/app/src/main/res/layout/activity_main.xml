@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:layout_above="@+id/button"
+        android:id="@+id/image_view"
+        android:src="@drawable/lollipop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button"
+        android:text="Switch Image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
