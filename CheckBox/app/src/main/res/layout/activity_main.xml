@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check Hobbies"
+        android:textSize="26dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/check_cricket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cricket" />
+
+        <CheckBox
+            android:id="@+id/check_football"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Football" />
+
+        <CheckBox
+            android:id="@+id/check_hockey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hockey" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
