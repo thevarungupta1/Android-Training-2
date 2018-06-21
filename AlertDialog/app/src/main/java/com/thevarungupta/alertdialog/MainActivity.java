@@ -30,13 +30,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.button_1:
-
+showDialoge();
                 break;
             case R.id.button_2:
                 break;
             case R.id.button_3:
                 break;
         }
+    }
+
+    private void showDialoge(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Quit");
+        builder.setMessage("Press yes to quit");
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setCancelable(false);
+
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 
