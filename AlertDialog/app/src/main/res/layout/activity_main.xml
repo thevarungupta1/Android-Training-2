@@ -4,24 +4,27 @@
     android:padding="10dp"
     android:layout_height="match_parent">
 
-    <Button
-        android:text="Show Alert"
-        android:id="@+id/button_1"
-        android:layout_margin="10dp"
+    <EditText
+        android:hint="Enter your name"
+        android:id="@+id/edit_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:text="Show Alert With Two Button"
-        android:id="@+id/button_2"
-        android:layout_margin="10dp"
+        android:text="Save Name"
+        android:id="@+id/button_save"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:text="Show Alert with Three buttons"
-        android:id="@+id/button_3"
-        android:layout_margin="10dp"
+        android:id="@+id/button_show"
+        android:text="Show Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/button_delete"
+        android:text="Delete Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

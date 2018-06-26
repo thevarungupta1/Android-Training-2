@@ -1,67 +1,91 @@
 package com.thevarungupta.alertdialog;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button buttonOne, buttonTwo, buttonThree;
+    private static final String FILE_NAME = "myFile";
+    private static final String KEY_NAME = "name";
+
+    Button saveButton, showButton, deleteButton;
+    EditText editName;
+    String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonOne = findViewById(R.id.button_1);
-        buttonTwo = findViewById(R.id.button_2);
-        buttonThree = findViewById(R.id.button_3);
+        editName = findViewById(R.id.edit_name);
+        saveButton = findViewById(R.id.button_save);
+        showButton = findViewById(R.id.button_show);
+        deleteButton = findViewById(R.id.button_delete);
 
-        buttonOne.setOnClickListener(this);
-        buttonTwo.setOnClickListener(this);
-        buttonThree.setOnClickListener(this);
+        saveButton.setOnClickListener(this);
+        showButton.setOnClickListener(this);
+        deleteButton.setOnClickListener(this);
+
     }
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.button_1:
-showDialoge();
+        switch (view.getId()) {
+            case R.id.button_save:
+                saveName();
                 break;
-            case R.id.button_2:
+            case R.id.button_show:
+               showName();
                 break;
-            case R.id.button_3:
+            case R.id.button_delete:
+                deleteName();
                 break;
         }
     }
 
-    private void showDialoge(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Quit");
-        builder.setMessage("Press yes to quit");
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setCancelable(false);
+    private void saveName(){
+        String name = editName.getText().toString();
+        SharedPreferences sharedPreferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(KEY_NAME,name );
+        editor.apply();
 
-        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-
-            }
-        });
-
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
     }
+
+    private void showName(){
+        SharedPreferences sharedPreferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+        String name = sharedPreferences.getString(KEY_NAME, null);
+        Toast.makeText(this, "Name is "+name, Toast.LENGTH_SHORT).show();
+    }
+
+    private void deleteName(){
+        SharedPreferences sharedPreferences = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+
+        // remove entire file
+        editor.clear();
+
+        // remove only one key
+        //editor.remove(KEY_NAME);
+
+        editor.apply();
+    }
+
+
+
+
+
+
+
+
+
 
 
 }
