@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string-array name="technology">
+        <item>Java</item>
+        <item>Android</item>
+        <item>Php</item>
+        <item>Node</item>
+        <item>Angular</item>
+        <item>Mongodb</item>
+        <item>SQL</item>
+        <item>React</item>
+        <item>Java</item>
+        <item>Android</item>
+        <item>Php</item>
+        <item>Node</item>
+        <item>Angular</item>
+        <item>Mongodb</item>
+        <item>SQL</item>
+        <item>React</item>
+    </string-array>
+</resources>
