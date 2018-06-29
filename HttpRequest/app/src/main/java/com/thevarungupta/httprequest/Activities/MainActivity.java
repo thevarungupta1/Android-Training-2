@@ -5,12 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
 import com.thevarungupta.httprequest.R;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button button1, button2;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
+
+        imageView = findViewById(R.id.image_view);
+        Picasso.get()
+                .load("https://s3.ap-south-1.amazonaws.com/pulse-flp/assets/img/bits_peaches.png")
+                .into(imageView);
     }
 
     @Override

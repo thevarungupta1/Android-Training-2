@@ -1,5 +1,6 @@
 package com.thevarungupta.httprequest.Activities;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -72,4 +73,5 @@ public class VolleyActivity extends AppCompatActivity {
                 });
         requestQueue.add(request);
     }
+
 }
