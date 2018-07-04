@@ -23,9 +23,12 @@ public class SendSmsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_send_sms);
 
         if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
+                Manifest.permission.SEND_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
             // permission is not granted
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, 100);
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.SEND_SMS},
+                    100);
         } else {
             // permission already been granted
         }
@@ -36,11 +39,24 @@ public class SendSmsActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 sendSMS();
             }
         });
     }
+    public void sendSMS() {
+        String phoneNumber = editPhone.getText().toString();
+        String message = editMessage.getText().toString();
+        SmsManager smsManager = SmsManager.getDefault();
+        smsManager.sendTextMessage(phoneNumber, null, message,
+
+                null, null);
+        Toast.makeText(this, "Message sent!", Toast.LENGTH_SHORT).show();
+    }
+
+
+
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -55,11 +71,5 @@ public class SendSmsActivity extends AppCompatActivity {
         }
     }
 
-    public void sendSMS() {
-        String phoneNumber = editPhone.getText().toString();
-        String message = editMessage.getText().toString();
-        SmsManager smsManager = SmsManager.getDefault();
-        smsManager.sendTextMessage(phoneNumber, null, message, null, null);
-        Toast.makeText(this, "Message sent!", Toast.LENGTH_SHORT).show();
-    }
+
 }

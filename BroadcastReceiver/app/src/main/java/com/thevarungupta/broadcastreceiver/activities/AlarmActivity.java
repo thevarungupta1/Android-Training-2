@@ -15,22 +15,29 @@ import com.thevarungupta.broadcastreceiver.R;
 
 public class AlarmActivity extends AppCompatActivity {
 
+    EditText editTime;
+    Button startButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
 
-        final EditText text =  findViewById(R.id.time);
-        Button button = findViewById(R.id.ok);
-        button.setOnClickListener(new View.OnClickListener() {
+        editTime = findViewById(R.id.edit_time);
+        startButton = findViewById(R.id.button_start);
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int i = Integer.parseInt(text.getText().toString());
+                int i = Integer.parseInt(editTime.getText().toString());
                 Intent intent = new Intent(AlarmActivity.this, MyAlarmReceiver.class);
-                PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this.getApplicationContext(), 234324243, intent, 0);
+                PendingIntent pendingIntent = PendingIntent.getBroadcast(AlarmActivity.this,
+                        234324243, intent, 0);
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() + (i * 1000), pendingIntent);
-                Toast.makeText(AlarmActivity.this, "Alarm set in " + i + " seconds", Toast.LENGTH_LONG).show();
+                alarmManager.set(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() +
+                        (i * 1000), pendingIntent);
+
+                Toast.makeText(AlarmActivity.this, "Alarm set in " + i + " seconds",
+                        Toast.LENGTH_LONG).show();
             }
         });
 

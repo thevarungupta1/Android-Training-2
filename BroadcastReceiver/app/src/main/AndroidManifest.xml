@@ -22,8 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.StartActivity" />
         <activity android:name=".activities.AlarmActivity"/>
+
+        <receiver android:name=".receivers.FirstReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
 
 
         <receiver android:name=".receivers.MyAlarmReceiver">

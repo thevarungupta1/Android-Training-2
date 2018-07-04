@@ -41,10 +41,13 @@ public class ReadSmsActivity extends AppCompatActivity {
 
     public void getAllSms() {
         Uri uriSMSURI = Uri.parse("content://sms/inbox");
-        Cursor cur = getContentResolver().query(uriSMSURI, null, null, null, null);
+        Cursor cur = getContentResolver().query(uriSMSURI,
+                null, null, null,
+                null);
         String sms = "";
         while (cur.moveToNext()) {
-            sms += "From :" + cur.getString(2) + " : " + cur.getString(11) + "\n";
+            sms += "From :" + cur.getString(2) + " : " +
+                    cur.getString(11) + "\n";
         }
         textView.setText(sms);
         //setContentView(textView);

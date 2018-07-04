@@ -55,16 +55,15 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put(COLUMN_NAME, user.getName());
         contentValues.put(COLUMN_EMAIL, user.getEmail());
         contentValues.put(COLUMN_PHONE, user.getPhone());
-
         long id = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         Toast.makeText(mContext, "Inserted " + id, Toast.LENGTH_SHORT).show();
     }
-
     public ArrayList<User> showAllUsers() {
         // String query = "select * from TABLE_NAME";
         ArrayList<User> list=new ArrayList<>();
         String[] columns = {COLUMN_ID, COLUMN_NAME, COLUMN_PHONE, COLUMN_EMAIL};
-        Cursor cursor = sqLiteDatabase.query(TABLE_NAME, columns, null, null, null, null, null);
+        Cursor cursor = sqLiteDatabase.query(TABLE_NAME, columns,
+                null, null, null, null, null);
         if (cursor != null && cursor.moveToFirst()) {
             do {
                 int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));

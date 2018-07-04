@@ -6,22 +6,17 @@
     android:padding="20dp">
 
     <ProgressBar
+        android:id="@+id/progress"
         android:indeterminate="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sleep Time in seconds"
-        android:textSize="22dp" />
-
     <EditText
-        android:id="@+id/edit_text"
+        android:id="@+id/edit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Time" />
+        android:layout_height="wrap_content" />
+
+
 
     <Button
         android:id="@+id/button"
@@ -30,10 +25,11 @@
         android:text="Run" />
 
     <TextView
-
-        android:id="@+id/text_view_result"
+        android:id="@+id/text_view"
+        android:textSize="28dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="26dp" />
+        android:layout_height="wrap_content" />
+
+
 
 </LinearLayout>

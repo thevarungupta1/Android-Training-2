@@ -16,41 +16,23 @@ public class MainActivity extends AppCompatActivity implements ConnectivityRecei
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-       
-        Button btnCheck = findViewById(R.id.btn_check);
-        btnCheck.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                checkConnection();
-            }
-        });
+        ConnectivityReceiver.setConnectivityReceiverListener(this);
     }
 
-    // Method to manually check connection status
-    private void checkConnection() {
-        boolean isConnected = ConnectivityReceiver.isConnected();
-        showMessage(isConnected);
-    }
-
-    private void showMessage(boolean isConnected) {
-        if (isConnected) {
-            Toast.makeText(this, "Good! Connected to Internet", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Sorry! Not connected to internet", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     @Override
     public void onNetworkConnectionChanged(boolean isConnected) {
         showMessage(isConnected);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // register connection status listener
-        MyApplication.getInstance().setConnectivityListener(this);
+    private void showMessage(boolean isConnected) {
+        if (isConnected) {
+            setContentView(R.layout.activity_main);
+            Toast.makeText(this, "Good! Connected to Internet", Toast.LENGTH_SHORT).show();
+        } else {
+            setContentView(R.layout.activity_offline);
+            Toast.makeText(this, "Sorry! Not connected to internet", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }

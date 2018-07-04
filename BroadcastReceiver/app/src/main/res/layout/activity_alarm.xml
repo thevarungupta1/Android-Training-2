@@ -5,14 +5,14 @@
     android:orientation="vertical">
 
     <EditText
-        android:id="@+id/time"
+        android:id="@+id/edit_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="Number of seconds"
         android:inputType="numberDecimal"></EditText>
 
     <Button
-        android:id="@+id/ok"
+        android:id="@+id/button_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="startAlert"

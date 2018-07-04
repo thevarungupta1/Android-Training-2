@@ -1,87 +1,73 @@
 package com.thevarungupta.asyntask;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView finalResult;
+
     Button button;
-    EditText time;
+ProgressBar progressBar;
+EditText editTime;
+TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        finalResult = findViewById(R.id.text_view_result);
-        time  =findViewById(R.id.edit_text);
+progressBar = findViewById(R.id.progress);
         button = findViewById(R.id.button);
+        editTime = findViewById(R.id.edit);
+        result = findViewById(R.id.text_view);
 
         button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                String time = editTime.getText().toString();
+               new TaskRun().execute(time);
 
-                String sleepTime = time.getText().toString();
-                TaskUpdate taskUpdate = new TaskUpdate();
-                taskUpdate.execute(sleepTime);
             }
         });
     }
+   public class TaskRun extends AsyncTask<String, Void, Void>{
 
-    private void blockUI(){
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+       @Override
+       protected void onPreExecute() {
+           super.onPreExecute();
+           result.setText("Task Started");
+       }
 
-    public class TaskUpdate extends AsyncTask<String, String, String>{
+       @Override
+       protected Void doInBackground(String... params) {
+           try {
+               int time = Integer.parseInt(params[0]);
+               Thread.sleep(time);
 
-        private String resp;
-        ProgressDialog progressDialog;
+           } catch (InterruptedException e) {
+               e.printStackTrace();
 
-        @Override
-        protected void onPreExecute() {
-            progressDialog = new ProgressDialog(MainActivity.this);
-            progressDialog.setTitle("Progress Dialoge");
-            progressDialog.setMessage("Wait for "+time.getText().toString()+ " seconds");
-            progressDialog.show();
-        }
+           }
+           return null;
+       }
 
-        @Override
-        protected String doInBackground(String... params) {
-            publishProgress("Sleeping...");
-            try {
-                int time = Integer.parseInt(params[0])*100;
-                Thread.sleep(time);
-                resp = "Sleep for "+params[0]+" second";
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-                resp = e.getMessage();
-            }
-            return resp;
-        }
+       @Override
+       protected void onPostExecute(Void aVoid) {
+           super.onPostExecute(aVoid);
+           progressBar.setVisibility(View.GONE);
+           result.setText("Task COmpleted");
+       }
+   }
 
-        @Override
-        protected void onProgressUpdate(String... text) {
-            finalResult.setText(text[0]);
-        }
 
-        @Override
-        protected void onPostExecute(String result) {
-            // execution of result of Long time consuming operation
-            progressDialog.dismiss();
-            finalResult.setText(result);
-        }
 
-    }
 }
