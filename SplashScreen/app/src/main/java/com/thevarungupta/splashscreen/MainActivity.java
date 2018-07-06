@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             intent.setType("text/plain");
             File f = new File(Environment.getExternalStorageDirectory(), "demo.txt");
             intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
+            // changes
 
             PackageManager pm = getPackageManager();
             List<ResolveInfo> list = pm.queryIntentActivities(intent, 0);
