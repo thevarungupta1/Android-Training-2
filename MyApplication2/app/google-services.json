@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "860578913792",
+    "firebase_url": "https://demo2-c2bf3.firebaseio.com",
+    "project_id": "demo2-c2bf3",
+    "storage_bucket": "demo2-c2bf3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860578913792:android:9d4c2b96eaa6e080",
+        "android_client_info": {
+          "package_name": "com.thevarungupta.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860578913792-sj2btp7fl3huu1vbq6i5p5t86tv3jln1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thevarungupta.myapplication",
+            "certificate_hash": "e731cd8d4c2ab15b31810cd1cc738e30bb282323"
+          }
+        },
+        {
+          "client_id": "860578913792-pgpj8edv8ohnlb0hpn2tdva5nc2ib461.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi8hTS8MSXT2WpIH6WryWU_vDhpnTSv3A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860578913792-pgpj8edv8ohnlb0hpn2tdva5nc2ib461.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
