@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+sms();
 
     }
 
@@ -69,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     }
                 }
+                if(! found){
+                    Toast.makeText(this, "bluetooth not found in list", Toast.LENGTH_SHORT).show();
+                }
+
             }
         }
     }

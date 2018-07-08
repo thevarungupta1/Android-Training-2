@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "408582750349",
+    "firebase_url": "https://globsyn-85d2d.firebaseio.com",
+    "project_id": "globsyn-85d2d",
+    "storage_bucket": "globsyn-85d2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:408582750349:android:d5c5116ab95357a5",
+        "android_client_info": {
+          "package_name": "com.thevarungupta.firebaseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "408582750349-to3jgai32kphk6q8ucemmrdq27a8inis.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thevarungupta.firebaseapp",
+            "certificate_hash": "e731cd8d4c2ab15b31810cd1cc738e30bb282323"
+          }
+        },
+        {
+          "client_id": "408582750349-o9koka0nss8p418llhf3u7pjbg5bmlse.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3hdPRx3NxotsrVqf2ikiHL52_ScBkiLI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "408582750349-o9koka0nss8p418llhf3u7pjbg5bmlse.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
