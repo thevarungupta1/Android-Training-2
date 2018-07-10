@@ -1,27 +1,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <Button
-        android:id="@+id/button_generate_otp"
+        android:id="@+id/button_barcode_generate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Generate OTP" />
+        android:text="Generate Barcode" />
 
-    <TextView
-        android:id="@+id/text_view_otp"
+
+    <ImageView
+        android:id="@+id/image_view_barcode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/text_barcode_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_view_barcode"
         android:layout_centerInParent="true"
-        android:text="0"
-        android:textSize="100dp" />
+        android:textSize="28dp" />
 
     <Button
-        android:id="@+id/button_share_otp"
+        android:id="@+id/button_barcode_scan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="Share OTP" />
+        android:layout_marginBottom="20dp"
+        android:text="Scan Barcode" />
+
 
 </RelativeLayout>
