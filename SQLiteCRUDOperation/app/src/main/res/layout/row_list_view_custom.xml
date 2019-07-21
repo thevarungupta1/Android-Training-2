@@ -1,0 +1,32 @@
+<RelativeLayout
+    android:padding="10dp"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:src="@drawable/ic_face_black_24dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/image_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
+
+    <TextView
+        android:textColor="#000"
+        android:textSize="24dp"
+        android:layout_toRightOf="@+id/image_view"
+        android:layout_marginBottom="10dp"
+        android:text="This is my title"
+        android:id="@+id/text_view_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="This is my description"
+        android:layout_below="@+id/text_view_title"
+        android:layout_toRightOf="@+id/image_view"
+        android:id="@+id/text_view_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

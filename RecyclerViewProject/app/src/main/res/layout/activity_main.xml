@@ -1,0 +1,21 @@
+<LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+
+    <Button
+        android:text="Recycler Linear View"
+        android:id="@+id/button_recycler_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:text="Recycler Grid View"
+        android:id="@+id/button_recycler_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+</LinearLayout>
